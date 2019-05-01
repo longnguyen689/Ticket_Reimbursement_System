@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Page</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+    <link href="style-employee.css" rel="stylesheet" id="style">
+</head>
+
+<!--question: submit type button submits the form when the button is clicked
+button type button doesnt submit the form. what does submit the form do?
+if it doesnt submit the form then how was the ./view.employee.tickets activated?-->
+
+
+<body>
+<!--doGet is used to query or to get some information from the server.-->
+<!-- doPost is used to update or post some information to the server.-->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <!-- MINE-->
+                <form method = "post" action = "tickets-employee.view"  class="nav-button-custom">
+                    <button type ="button" onclick="getTicket(display)" class="btn btn-dark" >Show my tickets</button>
+                    <!--button will print tickets on current page, submit doesn't. why?-->
+                    <div id="test"></div>
+                </form>
+
+            </li>
+
+            <li class="nav-item">
+                <form method="post" action="create-new-request.do" class="nav-button-custom">
+                    <button type="submit" class="btn btn-dark">Create new request</button>
+                </form>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" method="post"
+              action="logout.do">
+            <button class="btn btn-dark" type="submit">Logout</button>
+        </form>
+    </div>
+</nav>
+
+<!--TABLE-->
+<div>
+    <h1 id="table-title">Here is the list of your reimbursement ticket</h1>
+    <table id="user-ticket" class="table">
+        <tr>
+            <th>Ticket ID</th>
+            <th>Amount</th>
+            <th>Date Submitted</th>
+            <th>Description</th>
+            <th>Author ID</th>
+            <th>Date Resolved</th>
+            <th>Resolver ID</th>
+            <th>Ticket Status</th>
+            <th>Ticket Type</th>
+        </tr>
+    </table>
+</div>
+<script src="employee-script.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+
+</script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous">
+
+</script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous">
+
+</script>
+<script>
+    function showTicketsForEmp(function) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                 display(this); //this refers to xhttp
+            }
+        };
+        <!-- Send request to server-->
+        xhttp.open("GET", "http://localhost:8080/TicketReimbursementSystem_war/tickets-employee.view", true);
+        xhttp.send();
+    }
+</script>
+
+
+</body>
+</html>
+<!--note: html.com/input-type-button/
+<button> and button type of input, both displayed as buttons and rely on javascript for utility
+<button> can have a picture or marked-up text, while 'button' input cannot have either.
+So, if the <button> element is basically the same, except better, why use the button input type at all?
+The answer is the value attribute.
+With the button type input, the value is displayed on the button itself.
+With the <button> element, the button displays its content.
+This means that if you want to update or use the value and the displayed content in concert,
+you would need to use the button input, or else do a lot more scripting to sync the <button> value with its content.
+If the value is irrelevant, either element works just fine.
+-->

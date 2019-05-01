@@ -5,25 +5,22 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-<servlet>
-    <servlet-name>Login</servlet-name>
-    <servlet-class>main.servlet.LoginServlet</servlet-class>
-</servlet>
+    <servlet>
+        <servlet-name>MasterServlet</servlet-name>
+        <servlet-class>main.servlet.MasterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MasterServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
 
-<servlet>
-    <servlet-name>Logout</servlet-name>
-    <servlet-class>main.servlet.LogoutServlet</servlet-class>
-</servlet>
-
-    <!--servlet mapping place -->
-<servlet-mapping>
-    <servlet-name>Login</servlet-name>
-    <url-pattern>/validate.do</url-pattern>
-</servlet-mapping>
-
-<servlet-mapping>
-    <servlet-name>Logout</servlet-name>
-    <url-pattern>/logged.out</url-pattern>
-</servlet-mapping>
+    <servlet>
+        <servlet-name>TicketTableServlet</servlet-name>
+        <servlet-class>main.servlet.TicketTableServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TicketTableServlet</servlet-name>
+        <url-pattern>*.view</url-pattern>
+    </servlet-mapping>
 
 </web-app>

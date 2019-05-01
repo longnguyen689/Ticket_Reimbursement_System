@@ -3,94 +3,95 @@ package main.dataTransferObject;
 import java.sql.Date;
 
 public class ERS_Ticket{
-    private int t_ID, t_amount, t_author, t_resolver, t_statusID, t_typeID;
-    private Date t_submitted, t_resolved;
-    private String t_description;
+    private int ticketID,  ticketAuthor, ticketResolver, ticketStatusID, ticketTypeID;
+    private double ticketAmount;
+    private Date ticketSubmitted, ticketResolved;
+    private String ticketDescription;
 
-    public int getT_ID() {
-        return t_ID;
+    public int getTicketID() {
+        return ticketID;
     }
 
-    public void setT_ID(int t_ID) {
-        this.t_ID = t_ID;
+    public void setTicketID(int ticketID) {
+        this.ticketID = ticketID;
     }
 
-    public int getT_amount() {
-        return t_amount;
+    public double getTicketAmount() {
+        return ticketAmount;
     }
 
-    public void setT_amount(int t_amount) {
-        this.t_amount = t_amount;
+    public void setTicketAmount(double ticketAmount) {
+        this.ticketAmount = ticketAmount;
     }
 
-    public int getT_author() {
-        return t_author;
+    public int getTicketAuthor() {
+        return ticketAuthor;
     }
 
-    public void setT_author(int t_author) {
-        this.t_author = t_author;
+    public void setTicketAuthor(int ticketAuthor) {
+        this.ticketAuthor = ticketAuthor;
     }
 
-    public int getT_resolver() {
-        return t_resolver;
+    public int getticketResolver() {
+        return ticketResolver;
     }
 
-    public void setT_resolver(int t_resolver) {
-        this.t_resolver = t_resolver;
+    public void setTicketResolver(int ticketResolver) {
+        this.ticketResolver = ticketResolver;
     }
 
-    public int getT_statusID() {
-        return t_statusID;
+    public int getTicketStatusID() {
+        return ticketStatusID;
     }
 
-    public void setT_statusID(int t_statusID) {
-        this.t_statusID = t_statusID;
+    public void setTicketStatusID(int ticketStatusID) {
+        this.ticketStatusID = ticketStatusID;
     }
 
-    public int getT_typeID() {
-        return t_typeID;
+    public int getTicketTypeID() {
+        return ticketTypeID;
     }
 
-    public void setT_typeID(int t_typeID) {
-        this.t_typeID = t_typeID;
+    public void setTicketTypeID(int ticketTypeID) {
+        this.ticketTypeID = ticketTypeID;
     }
 
-    public Date getT_submitted() {
-        return t_submitted;
+    public Date getticketSubmitted() {
+        return ticketSubmitted;
     }
 
-    public void setT_submitted(Date t_submitted) {
-        this.t_submitted = t_submitted;
+    public void setTicketSubmitted(Date ticketSubmitted) {
+        this.ticketSubmitted = ticketSubmitted;
     }
 
-    public Date getT_resolved() {
-        return t_resolved;
+    public Date getTicketResolved() {
+        return ticketResolved;
     }
 
-    public void setT_resolved(Date t_resolved) {
-        this.t_resolved = t_resolved;
+    public void setTicketResolved(Date ticketResolved) {
+        this.ticketResolved = ticketResolved;
     }
 
-    public String getT_description() {
-        return t_description;
+    public String getTicketDescription() {
+        return ticketDescription;
     }
 
-    public void setT_description(String t_description) {
-        this.t_description = t_description;
+    public void setTicketDescription(String ticketDescription) {
+        this.ticketDescription = ticketDescription;
     }
 
     @Override
     public String toString() {
         return "ERS_Ticket{" +
-                "t_ID=" + t_ID +
-                ", t_amount=" + t_amount +
-                ", t_author=" + t_author +
-                ", t_resolver=" + t_resolver +
-                ", t_statusID=" + t_statusID +
-                ", t_typeID=" + t_typeID +
-                ", t_submitted=" + t_submitted +
-                ", t_resolved=" + t_resolved +
-                ", t_description='" + t_description + '\'' +
+                "ticketID=" + ticketID +
+                ", ticketAmount=" + ticketAmount +
+                ", ticketSubmitted=" + ticketSubmitted +
+                ", ticketDescription='" + ticketDescription + '\'' +
+                ", ticketAuthor=" + ticketAuthor +
+                ", ticketResolved=" + ticketResolved +
+                ", ticketResolver=" + ticketResolver +
+                ", ticketStatusID=" + ticketStatusID +
+                ", ticketTypeID=" + ticketTypeID +
                 '}';
     }
 }

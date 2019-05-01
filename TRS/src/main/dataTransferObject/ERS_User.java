@@ -1,7 +1,5 @@
 package main.dataTransferObject;
 
-import java.sql.ResultSet;
-
 public class ERS_User{ //public file can only have one class. and that class must have same with file name
     private int userID, roleID;
     private String userName, password, email;
@@ -15,12 +13,12 @@ public class ERS_User{ //public file can only have one class. and that class mus
         this.userID = userID;
     }
 
-    public int getRoldID() {
+    public int getRoleID() {
         return roleID;
     }
 
-    public void setRoleID(int roldID) {
-        this.roleID = roldID;
+    public void setRoleID(int roleID) {
+        this.roleID = roleID;
     }
 
     public String getUserName() {
